@@ -3,7 +3,7 @@ import cv2
 
 from video_io import read_video_to_frames, save_stabilized_video
 from optical_flow import find_alignment_between_frames
-from transform import compute_transform_matrix
+from transform import compute_transform_matrix, estimate_global_transform_lk
 from stabilization import stabilize_y
 from debug_utils import (
     debug_print_flow,
@@ -13,26 +13,27 @@ from debug_utils import (
 
 
 def compute_transform_matrices(frames, output_dir, max_corners=15, quality_level=0.001, min_distance=30):
-    """Compute transformation matrices for all consecutive frame pairs."""
+    """Compute transformation matrices for all consecutive frame pairs (global LK: translation + rotation)."""
     transform_matrices = []
     print(f"Processing {len(frames)} frames...")
 
     for idx in range(len(frames) - 1):
         print(f"Frame {idx}/{len(frames)-1}", end="\r")
-        g = cv2.cvtColor(frames[idx], cv2.COLOR_RGB2GRAY)
-        corners = cv2.goodFeaturesToTrack(
-            g, maxCorners=max_corners, qualityLevel=quality_level, minDistance=min_distance
-        )
-        points = corners.reshape(-1, 2)
-        flows = find_alignment_between_frames(frames[idx], frames[idx + 1], points)
 
-        M, theta, tx, ty = compute_transform_matrix(points, flows)
+        M, theta, tx, ty = estimate_global_transform_lk(
+            frames[idx], frames[idx + 1],
+            window_size=15,
+            pyramid_levels=5,
+            max_iterations=15,
+            epsilon=1e-4,
+        )
         transform_matrices.append(M)
 
         if idx < 10:
-            debug_print_flow(idx, theta, tx, ty, points, flows)
+            print(f"[{idx}] angle={theta:.6f} rad, tx={tx:.3f}, ty={ty:.3f}")
+            debug_print_flow(idx, theta, tx, ty, None, None)
             debug_visualize_flows(
-                frames[idx], points, flows, f"{output_dir}/flow_frame_{idx}.png"
+                frames[idx], None, None, f"{output_dir}/flow_frame_{idx}.png"
             )
 
     print("\nDone processing frames.")

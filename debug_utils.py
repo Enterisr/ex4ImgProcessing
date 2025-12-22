@@ -6,18 +6,17 @@ import numpy as np
 def debug_print_flow(idx, theta, tx, ty, points, flows):
     """Print flow debugging information."""
     print(f"\nFrame {idx}: theta={np.degrees(theta):.2f}°, tx={tx:.2f}, ty={ty:.2f}")
-    print(f"  Point 1: {points[0]} -> {points[0] + flows[0]}, flow={flows[0]}")
-    print(f"  Point 2: {points[1]} -> {points[1] + flows[1]}, flow={flows[1]}")
 
 
 def debug_visualize_flows(frame, points, flows, output_path):
     """Visualize flow vectors on frame and save to file."""
     debug_frame = frame.copy()
-    for pt, flow in zip(points, flows):
-        if not np.isnan(flow).any():
-            pt_int = tuple(pt.astype(int))
-            end_pt = tuple((pt + flow).astype(int))
-            cv2.arrowedLine(debug_frame, pt_int, end_pt, (0, 255, 0), 2)
+    if points is not None and flows is not None:
+        for pt, flow in zip(points, flows):
+            if not np.isnan(flow).any():
+                pt_int = tuple(pt.astype(int))
+                end_pt = tuple((pt + flow).astype(int))
+                cv2.arrowedLine(debug_frame, pt_int, end_pt, (0, 255, 0), 2)
     debug_frame = cv2.cvtColor(debug_frame, cv2.COLOR_RGB2BGR)
     cv2.imwrite(output_path, debug_frame)
 
