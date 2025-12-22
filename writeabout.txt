@@ -1,0 +1,142 @@
+*atan vs cos
+*lucas kanade
+*pyramid 
+*patches
+*Frame 0/7
+Frame 0: theta=-0.00°, tx=0.87, ty=-0.00
+  Point 1: [100. 150.] -> [100.865295 150.00824 ], flow=[0.86529565 0.00823891]
+  Point 2: [100. 250.] -> [100.868935 249.98558 ], flow=[ 0.86893713 -0.01442577]
+Frame 1/7
+Frame 1: theta=0.01°, tx=1.14, ty=0.01
+  Point 1: [201. 150.] -> [202.14343 150.01315], flow=[1.143431   0.01316033]
+  Point 2: [101. 150.] -> [102.136024 150.00371 ], flow=[1.1360271  0.00370709]
+Frame 2/7
+Frame 2: theta=-0.00°, tx=0.87, ty=0.00
+  Point 1: [102. 150.] -> [102.867455 150.00764 ], flow=[0.8674523  0.00764378]
+  Point 2: [202. 150.] -> [202.87004 150.0009 ], flow=[0.8700351  0.00089869]
+Frame 3/7
+Frame 3: theta=0.00°, tx=1.14, ty=0.01
+  Point 1: [203. 150.] -> [204.14522 150.0118 ], flow=[1.1452248  0.01179399]
+  Point 2: [103. 150.] -> [104.13273 150.0043 ], flow=[1.132731   0.00430306]
+Frame 4/7
+Frame 4: theta=0.00°, tx=0.87, ty=-0.00
+  Point 1: [104. 150.] -> [104.86745 150.00845], flow=[0.8674454  0.00844799]
+  Point 2: [104. 250.] -> [104.86534 249.9868 ], flow=[ 0.8653407  -0.01319961]
+Frame 5/7
+Frame 5: theta=0.01°, tx=1.14, ty=0.01
+  Point 1: [205. 150.] -> [206.13985 150.01189], flow=[1.1398433  0.01188797]
+  Point 2: [105. 150.] -> [106.13664 150.00258], flow=[1.1366401 0.002579 ]
+Frame 6/7
+Frame 6: theta=-0.00°, tx=0.87, ty=-0.00
+  Point 1: [106. 150.] -> [106.8647  150.00984], flow=[0.86470276 0.00984716]
+  Point 2: [106. 250.] -> [106.86737 249.98781], flow=[ 0.8673724 -0.0121911]
+
+Done processing frames.
+
+Applying first 4 transform matrices...
+
+Applying transform 0...
+  Transform matrix M[0]:
+    [ 9.99999999e-01 -3.64004577e-05  8.74396549e-01]
+    [ 3.64004577e-05  9.99999999e-01 -6.73333985e-03]
+    [0. 0. 1.]
+  Extracted: theta=0.0021°, tx=0.8744, ty=-0.0067
+  Saved debug_outputs/overlay_frame_0_on_1.png
+
+Applying transform 1...
+  Transform matrix M[1]:
+    [9.99999996e-01 9.44449020e-05 1.12556296e+00]
+    [-9.44449020e-05  9.99999996e-01  2.26955600e-02]
+    [0. 0. 1.]
+  Extracted: theta=-0.0054°, tx=1.1256, ty=0.0227
+  Saved debug_outputs/overlay_frame_1_on_2.png
+
+Applying transform 2...
+  Transform matrix M[2]:
+    [ 9.99999998e-01 -6.74421001e-05  8.78860378e-01]
+    [ 6.74421001e-05  9.99999998e-01 -5.97962230e-03]
+    [0. 0. 1.]
+  Extracted: theta=0.0039°, tx=0.8789, ty=-0.0060
+  Saved debug_outputs/overlay_frame_2_on_3.png
+
+Applying transform 3...
+  Transform matrix M[3]:
+    [9.99999997e-01 7.49112884e-05 1.12774162e+00]
+    [-7.49112884e-05  9.99999997e-01  1.95103712e-02]
+    [0. 0. 1.]
+  Extracted: theta=-0.0043°, tx=1.1277, ty=0.0195
+  Saved debug_outputs/overlay_frame_3_on_4.png
+
+Transform matrices applied and saved to debug_outputs/
+
+Creating stabilized video...
+Stabilizing frame 6/7
+Stabilized video saved to debug_outputs/stabilized_video.mp4
+(.venv) PS C:\Users\drunk\OneDrive - huji.ac.il\Desktop\ex4ImgProcessing>  c:; cd 'c:\Users\drunk\OneDrive - huji.ac.il\Desktop\ex4ImgProcessing'; & 'c:\Users\drunk\OneDrive - huji.ac.il\Desktop\ex4ImgProcessing\.venv\Scripts\python.exe' 'c:\Users\drunk\.vscode\extensions\ms-python.debugpy-2025.18.0-win32-x64\bundled\libs\debugpy\launcher' '60631' '--' 'C:\Users\drunk\OneDrive - huji.ac.il\Desktop\ex4ImgProcessing\ex4.py'
+Processing 8 frames...
+Frame 0/7
+Frame 0: theta=-0.00°, tx=0.86, ty=-0.00
+  Point 1: [100. 150.] -> [100.85988 150.00763], flow=[0.85987765 0.00762988]
+  Point 2: [100. 250.] -> [100.86299 249.9849 ], flow=[ 0.8629875  -0.01510447]
+Frame 1/7
+Frame 1: theta=0.00°, tx=1.14, ty=0.00
+  Point 1: [201. 150.] -> [202.13763 150.0074 ], flow=[1.1376326  0.00740593]
+  Point 2: [101. 150.] -> [102.14076 150.00018], flow=[1.1407657e+00 1.8035273e-04]
+Frame 2/7
+Frame 2: theta=-0.00°, tx=0.86, ty=0.00
+  Point 1: [102. 150.] -> [102.861275 150.00687 ], flow=[0.86127204 0.00686261]
+  Point 2: [202. 150.] -> [202.86497 149.99835], flow=[ 0.86497223 -0.00164689]
+Frame 3/7
+Frame 3: theta=0.00°, tx=1.14, ty=0.00
+  Point 1: [203. 150.] -> [204.13994 150.0059 ], flow=[1.1399385  0.00590727]
+  Point 2: [103. 150.] -> [104.137596 149.99892 ], flow=[ 1.1375973e+00 -1.0773258e-03]
+Frame 4/7
+Frame 4: theta=0.00°, tx=0.86, ty=-0.00
+  Point 1: [104. 150.] -> [104.862   150.00784], flow=[0.86200327 0.00783849]
+  Point 2: [104. 250.] -> [104.85965 249.98622], flow=[ 0.85965157 -0.01377386]
+Frame 5/7
+Frame 5: theta=0.01°, tx=1.14, ty=0.00
+  Point 1: [205. 150.] -> [206.13351 150.00653], flow=[1.1335078  0.00653571]
+  Point 2: [105. 150.] -> [106.14129 149.99738], flow=[ 1.141289   -0.00262662]
+Frame 6/7
+Frame 6: theta=-0.00°, tx=0.86, ty=-0.00
+  Point 1: [106. 150.] -> [106.85855 150.00934], flow=[0.85854846 0.00933766]
+  Point 2: [106. 250.] -> [106.86184 249.98775], flow=[ 0.86184055 -0.01224982]
+
+Done processing frames.
+
+Applying first 4 transform matrices...
+
+Applying transform 0...
+  Transform matrix M[0]:
+    [ 1.00000000e+00 -3.11350071e-05  8.67659602e-01]
+    [ 3.11350071e-05  1.00000000e+00 -6.85069952e-03]
+    [0. 0. 1.]
+  Extracted: theta=0.0018°, tx=0.8677, ty=-0.0069
+  Saved debug_outputs/overlay_frame_0_on_1.png
+
+Applying transform 1...
+  Transform matrix M[1]:
+    [9.99999997e-01 7.21763224e-05 1.12837308e+00]
+    [-7.21763224e-05  9.99999997e-01  1.46921577e-02]
+    [0. 0. 1.]
+  Extracted: theta=-0.0041°, tx=1.1284, ty=0.0147
+  Saved debug_outputs/overlay_frame_1_on_2.png
+
+Applying transform 2...
+  Transform matrix M[2]:
+    [ 9.99999996e-01 -8.51408893e-05  8.75893790e-01]
+    [ 8.51408893e-05  9.99999996e-01 -1.03330090e-02]
+    [0. 0. 1.]
+  Extracted: theta=0.0049°, tx=0.8759, ty=-0.0103
+  Saved debug_outputs/overlay_frame_2_on_3.png
+
+Applying transform 3...
+  Transform matrix M[3]:
+    [9.99999998e-01 6.98836128e-05 1.12828579e+00]
+    [-6.98836128e-05  9.99999998e-01  1.31075306e-02]
+    [0. 0. 1.]
+  Extracted: theta=-0.0040°, tx=1.1283, ty=0.0131
+  Saved debug_outputs/overlay_frame_3_on_4.png
+
+Transform matrices applied and saved
