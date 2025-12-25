@@ -16,10 +16,11 @@ def compute_transform_matrix(points, flows):
     # estimateAffine2D estimates full affine transform (rotation + translation + shear + scale)
     # Use fullAffine=False to restrict to similarity transform but we'll compute rigid transform manually
     # estimateRigidTransform would be ideal but it's deprecated, so we use estimateAffine2D
-    rot_matrix, inliers = cv2.estimateAffine2D(
+    rot_matrix, inliers = cv2.estimateAffinePartial2D(
         src_pts,
         dst_pts,
         method=cv2.RANSAC,
+        
         ransacReprojThreshold=5.0,
         maxIters=100,
         confidence=0.99,

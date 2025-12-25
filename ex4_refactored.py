@@ -12,7 +12,7 @@ from debug_utils import (
 )
 
 
-def compute_transform_matrices(frames, output_dir, max_corners=15, quality_level=0.001, min_distance=30):
+def compute_transform_matrices(frames, output_dir, max_corners=200, quality_level=0.001, min_distance=30):
     """Compute transformation matrices for all consecutive frame pairs."""
     transform_matrices = []
     print(f"Processing {len(frames)} frames...")
